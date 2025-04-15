@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\ChatApp;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -19,4 +20,6 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+Route::get('chat-app', ChatApp::class)->name('chat-app');
+
+require __DIR__ . '/auth.php';
